@@ -44,8 +44,8 @@ DATA		:=	data
 INCLUDES	:=	include
 ROMFS		:=	romfs
 
-APP_TITLE   := SDL2+mixer+image Demo
-APP_AUTHOR  := carstene1ns
+APP_TITLE   := Cheezit the Game
+APP_AUTHOR  := Diflic
 
 #---------------------------------------------------------------------------------
 # options for code generation
