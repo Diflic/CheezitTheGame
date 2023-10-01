@@ -1,5 +1,5 @@
 main.o: \
- E:/Makefiles/switch-examples-20201219/switch-examples-20201219/graphics/sdl2/Cheezit2/source/main.cpp \
+ E:\Documents\GitHub\CheezitTheGame\source/main.cpp \
  C:/devkitPro/portlibs/switch/include/SDL2/SDL.h \
  C:/devkitPro/portlibs/switch/include/SDL2/SDL_main.h \
  C:/devkitPro/portlibs/switch/include/SDL2/SDL_stdinc.h \
