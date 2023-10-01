@@ -1,5 +1,4 @@
-main.o: \
- E:\Documents\GitHub\CheezitTheGame\source/main.cpp \
+main.o: E:/Documents/GitHub/CheezitTheGame/source/main.cpp \
  C:/devkitPro/portlibs/switch/include/SDL2/SDL.h \
  C:/devkitPro/portlibs/switch/include/SDL2/SDL_main.h \
  C:/devkitPro/portlibs/switch/include/SDL2/SDL_stdinc.h \
