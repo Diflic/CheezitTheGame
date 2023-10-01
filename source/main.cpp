@@ -25,7 +25,7 @@
 
 #define SCREEN_W 1280
 #define SCREEN_H 720
-
+//texture render sets text into a renderer
 SDL_Texture * render_text(SDL_Renderer *renderer, const char* text, TTF_Font *font, SDL_Color color, SDL_Rect *rect) 
 {
     SDL_Surface *surface;
@@ -84,7 +84,7 @@ int main(int argc, char** argv)
     SDL_Window* window = SDL_CreateWindow("sdl2+mixer+image+ttf demo", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, w, h, SDL_WINDOW_SHOWN);
     SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
-    SDL_Surface *sdllogo = IMG_Load("data/god.png");
+    SDL_Surface *sdllogo = IMG_Load("data/god.png"); //first image 
     if (sdllogo) {
         sdl_pos.w = sdllogo->w;
         sdl_pos.h = sdllogo->h;
@@ -92,17 +92,17 @@ int main(int argc, char** argv)
         SDL_FreeSurface(sdllogo);
     }
 
-    SDL_Surface *box_img = IMG_Load("data/CheezitLoader.png");
+    SDL_Surface *box_img = IMG_Load("data/CheezitLoader.png"); //second image
     if (box_img) {
         box_pos.w = box_img->w;
         box_pos.h = box_img->h;
-        box_tex = SDL_CreateTextureFromSurface(renderer, box_img);
+        box_tex = SDL_CreateTextureFromSurface(renderer, box_img); //third image
         SDL_FreeSurface(box_img);
     }
 
 
 
-    SDL_Surface *rocklogo = IMG_Load("data/CheezitIntroDrop2.png"); 
+    SDL_Surface *rocklogo = IMG_Load("data/CheezitIntroDrop2.png"); //fourth image
     if (rocklogo) {
         rock_pos.w = rocklogo->w;
         rock_pos.h = rocklogo->h;
