@@ -45,7 +45,7 @@ INCLUDES	:=	include
 ROMFS		:=	romfs
 
 APP_TITLE   := Cheezit the Game
-APP_AUTHOR  := Diflic
+APP_AUTHOR  := Di
 
 #---------------------------------------------------------------------------------
 # options for code generation
