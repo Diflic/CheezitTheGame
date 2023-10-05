@@ -46,6 +46,7 @@ ROMFS		:=	romfs
 
 APP_TITLE   := Cheezit the Game
 APP_AUTHOR  := Diflic
+ICON := Cheezit1.jpg
 
 #---------------------------------------------------------------------------------
 # options for code generation
