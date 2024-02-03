@@ -80,10 +80,11 @@ int main(int argc, char** argv)
     int speed = 0, move = 0, cspeed = 0, bspeed = 0, screen = 0, vroom = 0;
     int num = 0, max = 9000, numspeed = 10, winer = 0, loser = 0;
     int timer = 0;
-
+    //create the SDL window where images can be created and made 
     SDL_Window* window = SDL_CreateWindow("sdl2+mixer+image+ttf demo", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, w, h, SDL_WINDOW_SHOWN);
     SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
+    //load and place the image into its surface
     SDL_Surface *sdllogo = IMG_Load("data/god.png"); //first image 
     if (sdllogo) {
         sdl_pos.w = sdllogo->w;
@@ -91,7 +92,6 @@ int main(int argc, char** argv)
         sdllogo_tex = SDL_CreateTextureFromSurface(renderer, sdllogo);
         SDL_FreeSurface(sdllogo);
     }
-
     SDL_Surface *box_img = IMG_Load("data/CheezitLoader.png"); //second image
     if (box_img) {
         box_pos.w = box_img->w;
@@ -99,9 +99,6 @@ int main(int argc, char** argv)
         box_tex = SDL_CreateTextureFromSurface(renderer, box_img); //third image
         SDL_FreeSurface(box_img);
     }
-
-
-
     SDL_Surface *rocklogo = IMG_Load("data/CheezitIntroDrop2.png"); //fourth image
     if (rocklogo) {
         rock_pos.w = rocklogo->w;
@@ -109,7 +106,6 @@ int main(int argc, char** argv)
         rock_tex = SDL_CreateTextureFromSurface(renderer, rocklogo);
         SDL_FreeSurface(rocklogo);
     }
-    
     SDL_Surface *cheezit = IMG_Load("data/cheezit.png"); 
     if (cheezit) {
         cheezits.w = cheezit->w;
@@ -117,7 +113,6 @@ int main(int argc, char** argv)
         cheezit_tex = SDL_CreateTextureFromSurface(renderer, cheezit);
         SDL_FreeSurface(cheezit);
     }
-
     SDL_Surface *win = IMG_Load("data/Winner.png"); 
     if (win) {
         win_pos.w = win->w;
@@ -125,7 +120,6 @@ int main(int argc, char** argv)
         win_tex = SDL_CreateTextureFromSurface(renderer, win);
         SDL_FreeSurface(win);
     }
-
     SDL_Surface *loose = IMG_Load("data/lose.png"); 
     if (loose) {
         loose_pos.w = loose->w;
@@ -133,14 +127,9 @@ int main(int argc, char** argv)
         loose_tex = SDL_CreateTextureFromSurface(renderer, loose);
         SDL_FreeSurface(loose);
     }
-
-
-
     // load font from romfs
     TTF_Font* font = TTF_OpenFont("data/ComicSansMS3.ttf", 36);
-
     // render text as texture
-    
     // no need to keep the font loaded
     SDL_Rect helloworld_rect = { 0, SCREEN_H - 36, 0, 0 };
     helloworld_tex = render_text(renderer, "Press B to restart", font, { 255, 255, 255, 0 }, &helloworld_rect);
@@ -154,8 +143,6 @@ int main(int argc, char** argv)
         return -1;
     }
 
-
-    
     // open CONTROLLER_PLAYER_1 and CONTROLLER_PLAYER_2
     // when railed, both joycons are mapped to joystick #0,
     // else joycons are individually mapped to joystick #0, joystick #1, ...
@@ -170,7 +157,6 @@ int main(int argc, char** argv)
 
     int nuke = 0;
     
-
     SDL_InitSubSystem(SDL_INIT_AUDIO);
     Mix_AllocateChannels(5);
     Mix_OpenAudio(48000, AUDIO_S16, 2, 4096);
@@ -267,12 +253,6 @@ int main(int argc, char** argv)
         
         // SDL_SetRenderDrawColor(renderer, color[0].r, color[0].g, color[0].b, color[0].a); //background
         SDL_RenderClear(renderer);
-
-        // // fill window bounds
-        // SDL_SetRenderDrawColor(renderer, 232, 126, 0, 255); // darkest shade of orange
-        // SDL_GetWindowSize(window, &w, &h);
-        // SDL_Rect f = {0, 0, w, h};
-        // SDL_RenderFillRect(renderer, &f);
 
         if (rock_tex){
             SDL_RenderCopy(renderer, rock_tex, NULL, &rock_pos);
